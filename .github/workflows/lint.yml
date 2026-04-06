@@ -1,0 +1,6 @@
+name: Lint
+on: [push, pull_request]
+
+jobs:
+  lint:
+    uses: KubaMichalowski-homelab/.github/.github/workflows/lint.yml@v1

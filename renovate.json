@@ -1,0 +1,23 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>KubaMichalowski-homelab/.github:renovate-config"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["postgres"],
+      "matchDatasources": ["docker"],
+      "allowedVersions": "15"
+    },
+    {
+      "matchPackageNames": ["rabbitmq"],
+      "matchDatasources": ["docker"],
+      "allowedVersions": "3"
+    },
+    {
+      "matchPackageNames": ["valkey/valkey"],
+      "matchDatasources": ["docker"],
+      "allowedVersions": "7"
+    }
+  ]
+}
