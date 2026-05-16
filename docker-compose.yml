@@ -60,7 +60,7 @@ x-app-env: &app-env
 
 services:
   web:
-    image: makeplane/plane-frontend:v1.3.0
+    image: makeplane/plane-frontend:v1.3.1
     deploy:
       replicas: 1
       restart_policy:
