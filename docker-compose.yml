@@ -103,7 +103,7 @@ services:
       - web
 
   api:
-    image: makeplane/plane-backend:v1.3.0
+    image: makeplane/plane-backend:v1.3.1
     command: ./bin/docker-entrypoint-api.sh
     deploy:
       replicas: 1
@@ -119,7 +119,7 @@ services:
       - plane-mq
 
   worker:
-    image: makeplane/plane-backend:v1.3.0
+    image: makeplane/plane-backend:v1.3.1
     command: ./bin/docker-entrypoint-worker.sh
     deploy:
       replicas: 1
@@ -136,7 +136,7 @@ services:
       - plane-mq
 
   beat-worker:
-    image: makeplane/plane-backend:v1.3.0
+    image: makeplane/plane-backend:v1.3.1
     command: ./bin/docker-entrypoint-beat.sh
     deploy:
       replicas: 1
@@ -153,7 +153,7 @@ services:
       - plane-mq
 
   migrator:
-    image: makeplane/plane-backend:v1.3.0
+    image: makeplane/plane-backend:v1.3.1
     command: ./bin/docker-entrypoint-migrator.sh
     deploy:
       replicas: 1
