@@ -232,6 +232,8 @@ services:
         condition: any
     environment:
       <<: *proxy-env
+    ports:
+      - "8010:80"
     volumes:
       - /opt/docker/plane/proxy_config:/config
       - /opt/docker/plane/proxy_data:/data
@@ -241,9 +243,3 @@ services:
       - space
       - admin
       - live
-    networks:
-      - proxy_network
-
-networks:
-  proxy_network:
-    external: true
