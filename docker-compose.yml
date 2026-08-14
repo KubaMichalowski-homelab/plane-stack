@@ -61,6 +61,7 @@ x-app-env: &app-env
 services:
   web:
     image: makeplane/plane-frontend:v1.4.1
+    container_name: plane-frontend
     deploy:
       replicas: 1
       restart_policy:
@@ -71,6 +72,7 @@ services:
 
   space:
     image: makeplane/plane-space:v1.4.1
+    container_name: plane-space
     deploy:
       replicas: 1
       restart_policy:
@@ -82,6 +84,7 @@ services:
 
   admin:
     image: makeplane/plane-admin:v1.4.1
+    container_name: plane-admin
     deploy:
       replicas: 1
       restart_policy:
@@ -92,6 +95,7 @@ services:
 
   live:
     image: makeplane/plane-live:v1.4.1
+    container_name: plane-live
     environment:
       <<: [*live-env, *redis-env]
     deploy:
@@ -104,6 +108,7 @@ services:
 
   api:
     image: makeplane/plane-backend:v1.4.1
+    container_name: plane-api
     command: ./bin/docker-entrypoint-api.sh
     deploy:
       replicas: 1
@@ -120,6 +125,7 @@ services:
 
   worker:
     image: makeplane/plane-backend:v1.4.1
+    container_name: plane-worker
     command: ./bin/docker-entrypoint-worker.sh
     deploy:
       replicas: 1
@@ -137,6 +143,7 @@ services:
 
   beat-worker:
     image: makeplane/plane-backend:v1.4.1
+    container_name: plane-beat-frontend
     command: ./bin/docker-entrypoint-beat.sh
     deploy:
       replicas: 1
@@ -154,6 +161,7 @@ services:
 
   migrator:
     image: makeplane/plane-backend:v1.4.1
+    container_name: plane-migrator
     command: ./bin/docker-entrypoint-migrator.sh
     deploy:
       replicas: 1
@@ -169,6 +177,7 @@ services:
 
   plane-db:
     image: postgres:15.7-alpine
+    container_name: plane-db
     command: postgres -c 'max_connections=1000'
     deploy:
       replicas: 1
@@ -181,6 +190,7 @@ services:
 
   plane-redis:
     image: valkey/valkey:7.2.11-alpine
+    container_name: plane-redis
     deploy:
       replicas: 1
       restart_policy:
@@ -190,6 +200,7 @@ services:
 
   plane-mq:
     image: rabbitmq:3.13.6-management-alpine
+    container_name: plane-mq
     deploy:
       replicas: 1
       restart_policy:
@@ -201,6 +212,7 @@ services:
 
   plane-minio:
     image: minio/minio:RELEASE.2025-09-07T16-13-09Z
+    container_name: plane-minio
     command: server /export --console-address ":9090"
     deploy:
       replicas: 1
@@ -213,6 +225,7 @@ services:
 
   proxy:
     image: makeplane/plane-proxy:v1.4.1
+    container_name: plane-proxy
     deploy:
       replicas: 1
       restart_policy:
