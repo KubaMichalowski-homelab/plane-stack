@@ -83,7 +83,7 @@ services:
       - web
 
   admin:
-    image: makeplane/plane-admin:v1.4.1
+    image: makeplane/plane-admin:v1.4.2
     container_name: plane-admin
     deploy:
       replicas: 1
