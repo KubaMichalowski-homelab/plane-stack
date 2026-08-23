@@ -107,7 +107,7 @@ services:
       - web
 
   api:
-    image: makeplane/plane-backend:v1.4.1
+    image: makeplane/plane-backend:v1.4.2
     container_name: plane-api
     command: ./bin/docker-entrypoint-api.sh
     deploy:
@@ -124,7 +124,7 @@ services:
       - plane-mq
 
   worker:
-    image: makeplane/plane-backend:v1.4.1
+    image: makeplane/plane-backend:v1.4.2
     container_name: plane-worker
     command: ./bin/docker-entrypoint-worker.sh
     deploy:
@@ -142,7 +142,7 @@ services:
       - plane-mq
 
   beat-worker:
-    image: makeplane/plane-backend:v1.4.1
+    image: makeplane/plane-backend:v1.4.2
     container_name: plane-beat-worker
     command: ./bin/docker-entrypoint-beat.sh
     deploy:
@@ -160,7 +160,7 @@ services:
       - plane-mq
 
   migrator:
-    image: makeplane/plane-backend:v1.4.1
+    image: makeplane/plane-backend:v1.4.2
     container_name: plane-migrator
     command: ./bin/docker-entrypoint-migrator.sh
     deploy:
