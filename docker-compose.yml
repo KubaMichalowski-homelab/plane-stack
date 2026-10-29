@@ -224,7 +224,7 @@ services:
       - /opt/docker/plane/uploads:/export
 
   proxy:
-    image: makeplane/plane-proxy:v1.4.2
+    image: makeplane/plane-proxy:v1.4.3
     container_name: plane-proxy
     deploy:
       replicas: 1
