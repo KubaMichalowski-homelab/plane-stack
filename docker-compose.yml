@@ -94,7 +94,7 @@ services:
       - web
 
   live:
-    image: makeplane/plane-live:v1.4.2
+    image: makeplane/plane-live:v1.4.3
     container_name: plane-live
     environment:
       <<: [*live-env, *redis-env]
