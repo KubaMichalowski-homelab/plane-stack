@@ -71,7 +71,7 @@ services:
       - worker
 
   space:
-    image: makeplane/plane-space:v1.4.2
+    image: makeplane/plane-space:v1.4.3
     container_name: plane-space
     deploy:
       replicas: 1
