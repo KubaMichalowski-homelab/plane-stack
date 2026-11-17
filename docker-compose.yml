@@ -60,7 +60,7 @@ x-app-env: &app-env
 
 services:
   web:
-    image: makeplane/plane-frontend:v1.4.3
+    image: makeplane/plane-frontend:v1.5.0
     container_name: plane-frontend
     deploy:
       replicas: 1
